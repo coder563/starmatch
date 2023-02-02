@@ -1,6 +1,7 @@
 import express from "express"
 import ReactDOMserver from "react-dom/server"
 import App from "../components/app"
+
 const server = express()
 
 server.use(express.static('dist'))
@@ -9,7 +10,7 @@ server.get("/",(req,res)=>{
 
     const initialMarkup = ReactDOMserver.renderToString(<App/>)
 
-    const returnString = 
+    
 
    // console.log("Return String ", returnString)
 
@@ -21,7 +22,7 @@ server.get("/",(req,res)=>{
         <div id="app" >{initialMarkup}</div>
         <script src="/main.js"></script>
     </body>
- </html>` )       
+ </html>`)       
  })
 
 server.listen(4242,()=>{console.log("Listening on port 4242")
